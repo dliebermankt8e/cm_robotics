@@ -72,6 +72,11 @@ namespace Utilities {
         } else {
             PinValue = pins.analogReadPin(AnalogPin.P2)
         }
+        serial.writeString("P")
+        serial.writeNumber(num)
+        serial.writeString(": ")
+        serial.writeNumber(PinValue)
+        serial.writeLine("")
         if (PinValue < 500) {
             return 1
         } else {
