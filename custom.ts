@@ -4,14 +4,16 @@
  * From the driver seat 
  * 1..2..4
  * 
- * #..#..#  Stop = 7
- * .......  Stop = 0
- * #..#...  Left = 3
- * #......  Left = 1
- * ...#..#  Right = 6
- * ......#  Right = 4
- * #.....#  Forward = 5
- * ...#...  Stop = 2
+ * W..W..W  Stop = 7
+ * B..B..B  Stop = 0
+ * 
+ * W..W..B  Left = 3
+ * W..B..B  Left = 1
+ * B..W..W  Right = 6
+ * B..B..W  Right = 4
+ * 
+ * W..B..W  Forward = 5
+ * B..W..B  Stop = 2
 **/
 
 enum Dir {
@@ -92,7 +94,7 @@ namespace Utilities {
             PinBinary |= 4;
         }
         switch (PinBinary) {
-            case 0:
+            case 0: 
                 return Stop();
             case 7:
                 return Stop();
