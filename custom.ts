@@ -78,6 +78,7 @@ namespace Utilities {
             case 1:
                 return Right;
         }
+        return Stop;
     }
     /**
      */
