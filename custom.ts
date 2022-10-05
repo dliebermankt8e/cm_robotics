@@ -56,9 +56,9 @@ namespace Utilities {
             PinValue = pins.analogReadPin(AnalogPin.P2)
         }
         if (PinValue < 500) {
-            return 1
-        } else {
             return 0
+        } else {
+            return 1
         }
     }
 
