@@ -106,13 +106,13 @@ namespace Utilities {
             case 6:
                 return Left();
             case 5:
-                return Stop();
+                return Forward();
            case 4:
                 return Left();
             case 3:
                 return Right();
             case 2:
-                return Forward();
+                return Stop();
             case 1:
                 return Right();
         }
