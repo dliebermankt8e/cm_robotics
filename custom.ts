@@ -1,4 +1,16 @@
 
+enum Dir {
+    //% block="Left"
+    Left,
+    //% block="Right"
+    Right,
+    //% block="Forward"
+    Forward,
+    //% block="Reverse"
+    Reverse,
+    //% block="Stop"
+    Stop
+}
 
 /**
  * Custom blocks
@@ -6,27 +18,31 @@
 //% weight=100 color=#0fbc11 icon="\uf1ec" block="CM Utilities"
 namespace Utilities {
 
-    /**
-     */
     //% block
-    export const Forward = 0;
-    /**
-     */
+    export function Left() {
+        return Dir.Left;
+    }
+
     //% block
-    export const Left = 1;
-    /**
-     */
+    export function Right() {
+        return Dir.Right;
+    }
+
     //% block
-    export const Right = 2;
-    /**
-     */
+    export function Forward() {
+        return Dir.Forward;
+    }
+
     //% block
-    export const Stop = 3;
-    /**
-     */
+    export function Reverse() {
+        return Dir.Reverse;
+    }
+
     //% block
-    export const Reverse = 4;
-   
+    export function Stop() {
+        return Dir.Stop;
+    }
+
     /**
      */
     //% block
@@ -49,7 +65,7 @@ namespace Utilities {
     /**
          */
     //% block
-    export function SensorDirection() : number {
+    export function SensorDirection() : Dir {
         let PinBinary = 0
         if (WhiteDetected(0) == 1) {
             PinBinary |= 1;
@@ -62,23 +78,23 @@ namespace Utilities {
         }
         switch (PinBinary) {
             case 0:
-                return Stop;
+                return Stop();
             case 7:
-                return Stop;
+                return Stop();
             case 6:
-                return Left;
+                return Left();
             case 5:
-                return Forward;
+                return Stop();
            case 4:
-                return Left;
+                return Left();
             case 3:
-                return Right;
+                return Right();
             case 2:
-                return Stop;
+                return Forward();
             case 1:
-                return Right;
+                return Right();
         }
-        return Stop;
+        return Stop();
     }
     /**
      */
