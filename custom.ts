@@ -1,3 +1,18 @@
+/**
+ * # = White Under sensor
+ * 
+ * From the driver seat 
+ * 1..2..4
+ * 
+ * #..#..#  Stop = 7
+ * .......  Stop = 0
+ * #..#...  Left = 3
+ * #......  Left = 1
+ * ...#..#  Right = 6
+ * ......#  Right = 4
+ * #.....#  Forward = 5
+ * ...#...  Stop = 2
+**/
 
 enum Dir {
     //% block="Left"
@@ -56,9 +71,9 @@ namespace Utilities {
             PinValue = pins.analogReadPin(AnalogPin.P2)
         }
         if (PinValue < 500) {
-            return 0
-        } else {
             return 1
+        } else {
+            return 0
         }
     }
 
