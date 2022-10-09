@@ -77,7 +77,7 @@ namespace Utilities {
         serial.writeString(": ")
         serial.writeNumber(PinValue)
         serial.writeLine("")
-        if (PinValue < 500) {
+        if (PinValue < 850) {
             return 1
         } else {
             return 0
