@@ -29,10 +29,10 @@ enum Dir {
     Stop
 }
 
-let Right_Forward_Speed = 40;
-let Right_Turn_Speed = 25;
-let Left_Forward_Speed = 40;
-let Left_Turn_Speed = 25;
+let Right_Forward_Speed = 30;
+let Right_Turn_Speed = 15;
+let Left_Forward_Speed = 30;
+let Left_Turn_Speed = 15;
 
 /**
  * Custom blocks
