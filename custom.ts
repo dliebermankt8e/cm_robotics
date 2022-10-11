@@ -29,6 +29,11 @@ enum Dir {
     Stop
 }
 
+let Right_Forward_Speed = 40;
+let Right_Turn_Speed = 25;
+let Left_Forward_Speed = 40;
+let Left_Turn_Speed = 25;
+
 /**
  * Custom blocks
  */
@@ -206,5 +211,53 @@ namespace Utilities {
         `       )
                 break;
         }
+    }
+    /**
+    */
+    //% block
+    export function SetRightForwardSpeed(num: number) {
+        Right_Forward_Speed = num;
+    }
+    /**
+    */
+    //% block
+    export function GetRightForwardSpeed() : number {
+        return Right_Forward_Speed;
+    }
+    /**
+    */
+    //% block
+    export function SetLeftForwardSpeed(num: number) {
+        Left_Forward_Speed = num;
+    }
+    /**
+    */
+    //% block
+    export function GetLeftForwardSpeed(): number {
+        return Left_Forward_Speed;
+    }
+    /**
+    */
+    //% block
+    export function SetRightTurnSpeed(num: number) {
+        Right_Turn_Speed = num;
+    }
+    /**
+    */
+    //% block
+    export function GetRightTurnSpeed(): number {
+        return Right_Turn_Speed;
+    }
+    /**
+    */
+    //% block
+    export function SetLeftTurnSpeed(num: number) {
+        Left_Turn_Speed = num;
+    }
+    /**
+    */
+    //% block
+    export function GetLeftTurnSpeed(): number {
+        return Left_Turn_Speed;
     }
 }
