@@ -33,6 +33,7 @@ let Right_Forward_Speed = 30;
 let Right_Turn_Speed = 15;
 let Left_Forward_Speed = 30;
 let Left_Turn_Speed = 15;
+let Motor_Enabled = false;
 
 /**
  * Custom blocks
@@ -259,5 +260,17 @@ namespace Utilities {
     //% block
     export function GetLeftTurnSpeed(): number {
         return Left_Turn_Speed;
+    }
+    /**
+    */
+    //% block
+    export function SetMotorEnabled(flag: boolean) {
+        Motor_Enabled = flag;
+    }
+    /**
+    */
+    //% block
+    export function GetMotorEnabled(): boolean {
+        return Motor_Enabled;
     }
 }
