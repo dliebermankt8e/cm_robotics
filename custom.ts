@@ -43,7 +43,7 @@ let Sensor_Thresh = 850;
 namespace Utilities {
 
     //% block
-    export function SetSensorThresh(num:number) {
+    export function SetSensorThresh(num: number) {
         Sensor_Thresh = num;
     }
 
@@ -95,7 +95,7 @@ namespace Utilities {
     }
 
     //% block
-    export function SensorDirection() : Dir {
+    export function SensorDirection(): Dir {
         let PinBinary = 0
         if (WhiteDetected(0) == 1) {
             PinBinary |= 1;
@@ -107,7 +107,7 @@ namespace Utilities {
             PinBinary |= 4;
         }
         switch (PinBinary) {
-            case 0: 
+            case 0:
                 return Stop();
             case 7:
                 return Stop();
@@ -115,7 +115,7 @@ namespace Utilities {
                 return Left();
             case 5:
                 return Forward();
-           case 4:
+            case 4:
                 return Left();
             case 3:
                 return Right();
@@ -221,7 +221,7 @@ namespace Utilities {
     }
 
     //% block
-    export function GetRightForwardSpeed() : number {
+    export function GetRightForwardSpeed(): number {
         return Right_Forward_Speed;
     }
 
