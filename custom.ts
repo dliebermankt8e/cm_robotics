@@ -34,18 +34,12 @@ let Right_Turn_Speed = 15;
 let Left_Forward_Speed = 30;
 let Left_Turn_Speed = 15;
 let Motor_Enabled = false;
-let Sensor_Thresh = 850;
 
 /**
  * Custom blocks
  */
 //% weight=100 color=#0fbc11 icon="\uf1ec" block="CM Utilities"
 namespace Utilities {
-
-    //% block
-    export function SetSensorThresh(num: number) {
-        Sensor_Thresh = num;
-    }
 
     //% block
     export function Left() {
@@ -72,6 +66,8 @@ namespace Utilities {
         return Dir.Stop;
     }
 
+    /**
+     */
     //% block
     export function WhiteDetected(num: number) {
         let PinValue = 0
@@ -82,18 +78,20 @@ namespace Utilities {
         } else {
             PinValue = pins.analogReadPin(AnalogPin.P2)
         }
-        //serial.writeString("P")
-        //serial.writeNumber(num)
-        //serial.writeString(": ")
-        //serial.writeNumber(PinValue)
-        //serial.writeLine("")
-        if (PinValue < Sensor_Thresh) {
+        serial.writeString("P")
+        serial.writeNumber(num)
+        serial.writeString(": ")
+        serial.writeNumber(PinValue)
+        serial.writeLine("")
+        if (PinValue < 850) {
             return 1
         } else {
             return 0
         }
     }
 
+    /**
+         */
     //% block
     export function SensorDirection(): Dir {
         let PinBinary = 0
@@ -126,7 +124,8 @@ namespace Utilities {
         }
         return Stop();
     }
-
+    /**
+     */
     //% block
     export function ShowSensorLines() {
         let PinBinary = 0
@@ -214,52 +213,62 @@ namespace Utilities {
                 break;
         }
     }
-
+    /**
+    */
     //% block
     export function SetRightForwardSpeed(num: number) {
         Right_Forward_Speed = num;
     }
-
+    /**
+    */
     //% block
     export function GetRightForwardSpeed(): number {
         return Right_Forward_Speed;
     }
-
+    /**
+    */
     //% block
     export function SetLeftForwardSpeed(num: number) {
         Left_Forward_Speed = num;
     }
-
+    /**
+    */
     //% block
     export function GetLeftForwardSpeed(): number {
         return Left_Forward_Speed;
     }
-
+    /**
+    */
     //% block
     export function SetRightTurnSpeed(num: number) {
         Right_Turn_Speed = num;
     }
-
+    /**
+    */
     //% block
     export function GetRightTurnSpeed(): number {
         return Right_Turn_Speed;
     }
-
+    /**
+    */
     //% block
     export function SetLeftTurnSpeed(num: number) {
         Left_Turn_Speed = num;
     }
-
+    /**
+    */
     //% block
     export function GetLeftTurnSpeed(): number {
         return Left_Turn_Speed;
     }
-
+    /**
+    */
     //% block
     export function SetMotorEnabled(flag: boolean) {
         Motor_Enabled = flag;
     }
-
+    /**
+    */
     //% block
     export function GetMotorEnabled(): boolean {
         return Motor_Enabled;
