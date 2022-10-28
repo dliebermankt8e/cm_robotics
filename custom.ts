@@ -29,17 +29,19 @@ enum Dir {
     Stop
 }
 
-let Right_Forward_Speed = 30;
-let Right_Turn_Speed = 15;
-let Left_Forward_Speed = 30;
-let Left_Turn_Speed = 15;
+let Forward_Right_Speed = 50;
+let Forward_Left_Speed = 50;
+let Right_Turn_Right_Speed = 15;
+let Right_Turn_Left_Speed = 30;
+let Left_Turn_Right_Speed = 30;
+let Left_Turn_Left_Speed = 15;
 let Motor_Enabled = false;
 let Sensor_Thresh = 850;
 
 /**
  * Custom blocks
  */
-//% weight=100 color=#0fbc11 icon="\uf1ec" block="CM Utilities"
+//% weight=100 color=#0DA50D icon="\uf1ec" block="CM Utilities"
 namespace Utilities {
 
     //% block
@@ -216,46 +218,66 @@ namespace Utilities {
     }
 
     //% block
-    export function SetRightForwardSpeed(num: number) {
-        Right_Forward_Speed = num;
+    export function SetForwardRightSpeed(num: number) {
+        Forward_Right_Speed = num;
     }
 
     //% block
-    export function GetRightForwardSpeed(): number {
-        return Right_Forward_Speed;
+    export function GetForwardRightSpeed(): number {
+        return Forward_Right_Speed;
     }
 
     //% block
-    export function SetLeftForwardSpeed(num: number) {
-        Left_Forward_Speed = num;
+    export function SetForwardLeftSpeed(num: number) {
+        Forward_Left_Speed = num;
     }
 
     //% block
-    export function GetLeftForwardSpeed(): number {
-        return Left_Forward_Speed;
+    export function GetForwardLeftSpeed(): number {
+        return Forward_Left_Speed;
     }
 
     //% block
-    export function SetRightTurnSpeed(num: number) {
-        Right_Turn_Speed = num;
+    export function SetRightTurnRightSpeed(num: number) {
+        Right_Turn_Right_Speed = num;
     }
 
     //% block
-    export function GetRightTurnSpeed(): number {
-        return Right_Turn_Speed;
+    export function GetRightTurnRightSpeed(): number {
+        return Right_Turn_Right_Speed;
     }
 
     //% block
-    export function SetLeftTurnSpeed(num: number) {
-        Left_Turn_Speed = num;
+    export function SetRightTurnLeftSpeed(num: number) {
+        Right_Turn_Left_Speed = num;
     }
 
     //% block
-    export function GetLeftTurnSpeed(): number {
-        return Left_Turn_Speed;
+    export function GetRightTurnLeftSpeed(): number {
+        return Right_Turn_Left_Speed;
     }
 
     //% block
+    export function SetLeftTurnRightSpeed(num: number) {
+        Left_Turn_Right_Speed = num;
+    }
+
+    //% block
+    export function GetLeftTurnRightSpeed(): number {
+        return Left_Turn_Right_Speed;
+    }
+
+    //% block
+    export function SetLeftTurnLeftSpeed(num: number) {
+        Left_Turn_Left_Speed = num;
+    }
+
+    //% block
+    export function GetLeftTurnLeftSpeed(): number {
+        return Left_Turn_Left_Speed;
+    }
+
+   //% block
     export function SetMotorEnabled(flag: boolean) {
         Motor_Enabled = flag;
     }
